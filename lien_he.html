@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Liên hệ - Anh Cutis</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f3f5f1;
+        }
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+        .left {
+            flex: 2;
+            padding: 60px 40px 40px 60px;
+            background: #f3f5f1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .left h1 {
+            font-size: 64px;
+            font-weight: bold;
+            margin: 0 0 20px 0;
+            letter-spacing: -2px;
+        }
+        .left p {
+            font-size: 28px;
+            margin: 0 0 40px 0;
+        }
+        .contact-info {
+            margin-top: 40px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 18px;
+            font-size: 22px;
+        }
+        .contact-item i {
+            font-size: 28px;
+            margin-right: 18px;
+            color: #8b5c2a;
+            width: 32px;
+            text-align: center;
+        }
+        .contact-item a {
+            color: #222;
+            text-decoration: underline;
+        }
+        .right {
+            flex: 1.2;
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: flex-start;
+            position: relative;
+        }
+        .logo {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: #f3f5f1;
+            border-bottom-left-radius: 40px;
+            padding: 32px 48px 16px 48px;
+        }
+        .logo span {
+            font-family: 'Times New Roman', serif;
+            font-size: 38px;
+            color: #222;
+            letter-spacing: 2px;
+        }
+        .image-box {
+            margin-top: 160px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .image-box img {
+            width: 100%;
+            border-radius: 40px;
+            object-fit: cover;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+        }
+        @media (max-width: 900px) {
+            .container { flex-direction: column; }
+            .right, .left { flex: unset; width: 100%; }
+            .logo { position: static; text-align: right; }
+            .image-box { margin-top: 40px; }
+        }
+    </style>
+    <!-- Sử dụng Font Awesome cho icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <h1>Contact Us!</h1>
+            <p>Hãy liên hệ với chúng tôi<br>để biết thêm thông tin!</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    0399311186
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-globe"></i>
+                    <a href="http://banduongacutis.vn.com" target="_blank">http://banduongacutis.vn.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:banduongacutisvn@gmail.com">banduongacutisvn@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none; color: inherit;"><span>Anh Cutis</span></a>
+            </div>
+            <div class="image-box">
+                <img src="image/777.jpg" alt="Contact illustration">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
