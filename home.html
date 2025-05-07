@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Carlo Acutis</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle, #e0e8ff 0%, #1a3ca6 100%);
+      min-height: 100vh;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      position: relative;
+      background-image: url('image/999.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .profile-header {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      display: flex;
+      align-items: center;
+      z-index: 2;
+    }
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 5px solid #fff;
+      object-fit: cover;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    }
+    .name {
+      margin-left: 24px;
+      color: #e0e8ff;
+      text-shadow: 2px 2px 8px #1a3ca6;
+      font-size: 2.00rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      line-height: 1.2;
+    }
+    .main-photo {
+      display: block;
+      margin: 0 auto;
+      margin-top: 100px;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+      max-width: 500px;
+      width: 90vw;
+      background: radial-gradient(circle, #fff 40%, #1a3ca6 100%);
+      padding: 16px;
+    }
+    @media (max-width: 600px) {
+      .profile-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .name {
+        margin-left: 0;
+        margin-top: 12px;
+        font-size: 1.5rem;
+      }
+      .main-photo {
+        margin-top: 60px;
+        max-width: 95vw;
+      }
+    }
+  </style>
+  <script>
+    // Hiệu ứng xuất hiện từng chữ một cho dòng chữ "CARLO ACUTIS" lặp đi lặp lại
+    document.addEventListener('DOMContentLoaded', function() {
+      const text = 'CARLO\nACUTIS';
+      const container = document.getElementById('animated-name');
+      let i = 0;
+      function typeChar() {
+        if (i < text.length) {
+          if (text[i] === '\\n') {
+            container.innerHTML += '<br>';
+          } else {
+            const span = document.createElement('span');
+            span.textContent = text[i];
+            span.style.opacity = 0;
+            span.style.transition = 'opacity 0.3s';
+            container.appendChild(span);
+            setTimeout(() => { span.style.opacity = 1; }, 10);
+          }
+          i++;
+          setTimeout(typeChar, 120);
+        } else {
+          setTimeout(() => {
+            container.innerHTML = '';
+            i = 0;
+            typeChar();
+          }, 1200); // Đợi 1.2 giây trước khi lặp lại
+        }
+      }
+      typeChar();
+    });
+  </script>
+</head>
+<body>
+  <div class="profile-header">
+    <a href="index.html">
+      <img src="image/888.jpg" alt="Carlo Acutis" class="avatar">
+    </a>
+    <div class="name" id="animated-name"></div>
+  </div>
+</body>
+</html>
